@@ -57,6 +57,7 @@ jobs:
         - brew install yarn
         - yarn
         - cd ios
+        - pod repo update
         - pod install
         - xcodebuild -workspace RNAMap3D.xcworkspace -scheme RNAMap3D -sdk iphonesimulator -quiet
 
@@ -107,6 +108,6 @@ jobs:
 stages:
   - "test js"
   - name: "build test for example"
-    if: branch = master
+    # if: branch = master
   - name: "build test for new project"
     if: branch = release
